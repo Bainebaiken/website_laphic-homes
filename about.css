@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* PAGE HEADER */
+.page-header {
+    background: #1a1a1a;
+    color: #c9a050;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.page-header h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #fff;
+}
+
+/* CONTAINER */
+.about-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* SECTIONS */
+.about-section {
+    background: #fff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+}
+
+.about-section h2 {
+    color: #c9a050;
+    margin-bottom: 15px;
+}
+
+/* TWO COLUMN */
+.two-column {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* WHY US */
+.why-us {
+    list-style: none;
+}
+
+.why-us li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* VALUES */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.value-box {
+    background: #f9f9f9;
+    padding: 20px;
+    border-left: 4px solid #c9a050;
+    border-radius: 4px;
+}
+
+.value-box h3 {
+    margin-bottom: 8px;
+    color: #1a1a1a;
+}
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background-color: #1a1a1a;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* LOGO */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #c9a050;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #ffffff;
+    font-weight: normal;
+}
+
+/* NAV LINKS */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 5px;
+}
+
+/* HOVER EFFECT */
+.nav-links li a:hover {
+    color: #c9a050;
+    border-bottom: 2px solid #c9a050;
+}
+
+/* ACTIVE LINK (optional) */
+.nav-links li a.active {
+    color: #c9a050;
+    border-bottom: 2px solid #c9a050;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 30px;
+    }
+
+    .nav-links {
+        display: none; /* for now (can add hamburger later) */
+    }
+}
+

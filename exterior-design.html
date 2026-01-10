@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exterior Design - LAPHIC Modern Homes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --concrete: #95a5a6;
+            --steel: #34495e;
+            --copper: #b87333;
+            --slate: #2c3e50;
+            --white: #ffffff;
+            --off-white: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background: var(--off-white);
+            color: var(--slate);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(44, 62, 80, 0.97);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--copper);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--off-white);
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--copper);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--slate);
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, transparent 30%, rgba(184, 115, 51, 0.1) 30%),
+                linear-gradient(-45deg, transparent 30%, rgba(184, 115, 51, 0.1) 30%);
+            background-size: 60px 60px;
+            animation: heroPattern 20s linear infinite;
+        }
+
+        @keyframes heroPattern {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(60px, 60px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 9rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 0.9;
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .hero h1 span {
+            color: var(--copper);
+            display: block;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            color: var(--concrete);
+            max-width: 600px;
+            line-height: 1.8;
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--steel);
+            padding: 4rem 5%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+            color: var(--white);
+        }
+
+        .stat-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--copper);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 8rem 5%;
+            background: var(--white);
+        }
+
+        .section-header {
+            max-width: 800px;
+            margin: 0 auto 6rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--slate);
+            letter-spacing: -1px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: #7f8c8d;
+        }
+
+        .services-layout {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            gap: 0;
+        }
+
+        .service-feature {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 500px;
+            background: var(--off-white);
+        }
+
+        .service-feature:nth-child(even) {
+            background: var(--white);
+        }
+
+        .service-feature:nth-child(even) .feature-content {
+            order: 2;
+        }
+
+        .service-feature:nth-child(even) .feature-visual {
+            order: 1;
+        }
+
+        .feature-content {
+            padding: 5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--copper);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .feature-content h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--slate);
+            font-weight: 600;
+        }
+
+        .feature-content p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1rem;
+            color: var(--steel);
+        }
+
+        .feature-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--copper);
+            font-size: 1.2rem;
+        }
+
+        .feature-visual {
+            background: var(--concrete);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-visual svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Expertise Section */
+        .expertise-section {
+            padding: 8rem 5%;
+            background: linear-gradient(135deg, var(--slate) 0%, var(--steel) 100%);
+            color: var(--white);
+        }
+
+        .expertise-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .expertise-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem 2rem;
+            border-left: 4px solid var(--copper);
+            transition: all 0.4s ease;
+        }
+
+        .expertise-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(10px);
+        }
+
+        .expertise-card h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .expertise-card p {
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* Projects Showcase */
+        .projects-showcase {
+            padding: 8rem 5%;
+            background: var(--white);
+        }
+
+        .projects-grid {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .project-card {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .project-card:first-child {
+            grid-column: span 2;
+            height: 600px;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 100%;
+            background: var(--concrete);
+            transition: transform 0.7s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.1);
+        }
+
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 3rem;
+            background: linear-gradient(to top, rgba(44, 62, 80, 0.95), transparent);
+            color: var(--white);
+            transform: translateY(60%);
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            transform: translateY(0);
+        }
+
+        .project-overlay h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .project-overlay p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 8rem 5%;
+            background: var(--copper);
+            text-align: center;
+            color: var(--white);
+        }
+
+        .cta-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1.5rem 4rem;
+            background: var(--white);
+            color: var(--slate);
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            transition: all 0.4s ease;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--slate);
+            color: var(--concrete);
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 6rem;
+            }
+
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .service-feature {
+                grid-template-columns: 1fr;
+            }
+
+            .service-feature:nth-child(even) .feature-content,
+            .service-feature:nth-child(even) .feature-visual {
+                order: initial;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card:first-child {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .section-header h2 {
+                font-size: 3rem;
+            }
+
+            .stats-bar {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">LAPHIC <span>MODERN</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">WHO WE ARE</a></li>
+            <li><a href="#services">SERVICES</a></li>
+            <li><a href="#portfolio">PORTFOLIO</a></li>
+            <li><a href="#testimonials">TESTIMONIALS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>EXTERIOR<span>DESIGN</span></h1>
+            <p>Building excellence from the ground up. We create exterior spaces that make lasting impressions and stand the test of time.</p>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stat">
+            <div class="stat-number">300+</div>
+            <div class="stat-label">BUILDINGS COMPLETED</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">15</div>
+            <div class="stat-label">YEARS EXPERIENCE</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">QUALITY ASSURED</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">EXPERT TEAM</div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="section-header">
+            <h2>OUR EXPERTISE</h2>
+            <p>From foundation to finish, we deliver comprehensive exterior design and construction services that transform architectural visions into reality.</p>
+        </div>
+
+        <div class="services-layout">
+            <div class="service-feature">
+                <div class="feature-content">
+                    <div class="feature-icon">🏗️</div>
+                    <h3>Construction Services</h3>
+                    <p>Full-scale construction management from concept to completion. Our experienced team ensures every project is built to the highest standards of quality and safety.</p>
+                    <ul class="feature-list">
+                        <li>Residential & Commercial Construction</li>
+                        <li>Structural Engineering</li>
+                        <li>Foundation & Framework</li>
+                        <li>Project Management</li>
+                        <li>Quality Control & Inspection</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="800" height="500" fill="#2c3e50"/>
+                        <rect x="100" y="100" width="300" height="350" fill="none" stroke="#b87333" stroke-width="4"/>
+                        <rect x="450" y="150" width="250" height="300" fill="none" stroke="#b87333" stroke-width="4"/>
+                        <line x1="100" y1="450" x2="700" y2="450" stroke="#95a5a6" stroke-width="3"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="service-feature">
+                <div class="feature-content">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Exterior Painting</h3>
+                    <p>Professional exterior painting services using premium weather-resistant materials that protect and beautify your property for years to come.</p>
+                    <ul class="feature-list">
+                        <li>Surface Preparation & Treatment</li>
+                        <li>Premium Paint Application</li>
+                        <li>Weather-Resistant Coatings</li>
+                        <li>Color Consultation</li>
+                        <li>Protective Sealants</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="paint-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#34495e;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#95a5a6;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="800" height="500" fill="url(#paint-grad)"/>
+                        <circle cx="400" cy="250" r="150" fill="none" stroke="#b87333" stroke-width="3" opacity="0.6"/>
+                        <path d="M 200,100 L 600,400" stroke="#b87333" stroke-width="2" opacity="0.4"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="service-feature">
+                <div class="feature-content">
+                    <div class="feature-icon">💧</div>
+                    <h3>Outdoor Aquariums</h3>
+                    <p>Stunning outdoor water features that add tranquility and visual interest to your exterior spaces, designed for both beauty and functionality.</p>
+                    <ul class="feature-list">
+                        <li>Custom Aquarium Design</li>
+                        <li>Professional Installation</li>
+                        <li>Filtration Systems</li>
+                        <li>Landscape Integration</li>
+                        <li>Maintenance Support</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="800" height="500" fill="#34495e"/>
+                        <ellipse cx="400" cy="300" rx="250" ry="150" fill="rgba(184,115,51,0.3)"/>
+                        <circle cx="300" cy="250" r="40" fill="rgba(149,165,166,0.5)"/>
+                        <circle cx="500" cy="300" r="50" fill="rgba(149,165,166,0.4)"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="service-feature">
+                <div class="feature-content">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Aluminum Works</h3>
+                    <p>Modern aluminum installations including windows, doors, railings, and architectural features that combine durability with contemporary aesthetics.</p>
+                    <ul class="feature-list">
+                        <li>Aluminum Windows & Doors</li>
+                        <li>Railings & Balustrades</li>
+                        <li>Cladding & Facades</li>
+                        <li>Custom Fabrication</li>
+                        <li>Powder Coating Options</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="800" height="500" fill="#95a5a6"/>
+                        <rect x="150" y="100" width="200" height="300" fill="none" stroke="#2c3e50" stroke-width="6"/>
+                        <rect x="450" y="100" width="200" height="300" fill="none" stroke="#2c3e50" stroke-width="6"/>
+                        <line x1="150" y1="250" x2="350" y2="250" stroke="#2c3e50" stroke-width="4"/>
+                        <line x1="450" y1="250" x2="650" y2="250" stroke="#2c3e50" stroke-width="4"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="expertise-section">
+        <div class="section-header" style="color: white;">
+            <h2 style="color: white;">WHY CHOOSE US</h2>
+            <p style="color: rgba(255,255,255,0.9);">Decades of experience, uncompromising quality, and dedication to exceeding expectations.</p>
+        </div>
+        
+        <div class="expertise-grid">
+            <div class="expertise-card">
+                <h4>Quality Materials</h4>
+                <p>We source only the finest materials from trusted suppliers, ensuring durability and longevity for every project.</p>
+            </div>
+            <div class="expertise-card">
+                <h4>Expert Craftsmanship</h4>
+                <p>Our skilled team brings years of experience and precision to every detail of your exterior design.</p>
+            </div>
+            <div class="expertise-card">
+                <h4>Timely Delivery</h4>
+                <p>We respect your time and schedule, completing projects efficiently without compromising quality.</p>
+            </div>
+            <div class="expertise-card">
+                <h4>Weather Resistance</h4>
+                <p>All our exterior work is designed to withstand local climate conditions and maintain beauty over time.</p>
+            </div>
+            <div class="expertise-card">
+                <h4>Safety Standards</h4>
+                <p>We adhere to the highest safety protocols and building codes in every aspect of construction.</p>
+            </div>
+            <div class="expertise-card">
+                <h4>Sustainable Practices</h4>
+                <p>Environmental responsibility guides our choice of materials and construction methods.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Showcase -->
+    <section class="projects-showcase">
+        <div class="section-header">
+            <h2>FEATURED PROJECTS</h2>
+            <p>Browse our portfolio of exceptional exterior designs and construction projects.</p>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="1200" height="600" fill="#2c3e50"/>
+                        <text x="600" y="300" font-family="Oswald" font-size="60" fill="#b87333" text-anchor="middle" dominant-baseline="middle">MODERN VILLA EXTERIOR</text>
+                    </svg>
+                </div>
+                <div class="project-overlay">
+                    <h4>Contemporary Villa</h4>
+                    <p>Complete exterior design & construction | Kampala</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="600" height="500" fill="#34495e"/>
+                    </svg>
+                </div>
+                <div class="project-overlay">
+                    <h4>Commercial Building</h4>
+                    <p>Exterior renovation | Entebbe</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="600" height="500" fill="#95a5a6"/>
+                    </svg>
+                </div>
+                <div class="project-overlay">
+                    <h4>Residential Complex</h4>
+                    <p>New construction | Jinja</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>BUILD WITH CONFIDENCE</h2>
+        <p>Partner with us to create an exterior that stands out and stands strong. Let's bring your architectural vision to life.</p>
+        <a href="contact.html" class="cta-btn">START YOUR PROJECT</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 LAPHIC Modern Homes. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Scroll reveal
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-feature, .expertise-card, .project-card').forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(40px)';
+            el.style.transition = `all 0.7s ease-out ${index * 0.1}s`;
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
