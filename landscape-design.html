@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landscape Design - LAPHIC Modern Homes</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Landscape Design Services - LAPHIC Modern Homes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:wght@300;400;500;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,17 +13,20 @@
         }
 
         :root {
-            --primary: #0a0a0a;
-            --gold: #c9a050;
+            --midnight: #0f1419;
+            --teal: #9c6c24;
+            --coral: #ff6b6b;
             --cream: #f8f6f0;
-            --charcoal: #2c2c2c;
-            --rust: #c85a3e;
+            --charcoal: #3a3a3a;
+            --gold: #c9a050;
+            --primary: #0a0a0a;
+            --green: #2d7a4f;
         }
 
         body {
             font-family: 'Crimson Pro', serif;
             background: var(--cream);
-            color: var(--primary);
+            color: var(--charcoal);
             overflow-x: hidden;
         }
 
@@ -68,102 +71,124 @@
 
         /* Hero Section */
         .hero {
-            height: 90vh;
+            position: relative;
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('images/landscape.jfif') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(rgba(45, 80, 22, 0.6), rgba(104, 163, 87, 0.6)),
-                        url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="%232d5016"/></svg>');
-            background-size: cover;
-            position: relative;
-            margin-top: 80px;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 30% 40%, rgba(212, 112, 90, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 70% 60%, rgba(104, 163, 87, 0.1) 0%, transparent 40%);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
             text-align: center;
-            color: var(--sand);
-            max-width: 1000px;
-            padding: 0 2rem;
+            color: white;
+            margin-top: 80px;
         }
 
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 7rem;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-            letter-spacing: 2px;
-            animation: fadeInUp 1.2s ease-out;
+        .hero-content h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        .hero p {
+        .hero-content .service-number {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 8rem;
+            color: rgba(201, 160, 80, 0.2);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .hero-content p {
             font-size: 1.5rem;
-            font-weight: 300;
-            letter-spacing: 1px;
-            opacity: 0.95;
-            animation: fadeInUp 1.2s ease-out 0.3s both;
+            margin-bottom: 2rem;
+            color: var(--cream);
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .breadcrumb {
+            position: absolute;
+            top: 120px;
+            left: 5%;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
         }
 
-        /* Philosophy Section */
-        .philosophy-section {
-            padding: 8rem 5%;
-            background: var(--sand);
+        .breadcrumb a {
+            color: var(--gold);
+            text-decoration: none;
+            margin-right: 0.5rem;
         }
 
-        .philosophy-content {
-            max-width: 1200px;
+        /* Service Overview */
+        .service-overview {
+            padding: 6rem 5%;
+            max-width: 1400px;
             margin: 0 auto;
+        }
+
+        .overview-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 5rem;
+            gap: 4rem;
             align-items: center;
         }
 
-        .philosophy-text h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            margin-bottom: 2rem;
-            color: var(--forest);
-        }
-
-        .philosophy-text p {
-            font-size: 1.2rem;
-            line-height: 2;
-            color: #555;
+        .overview-content h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 3rem;
+            color: var(--midnight);
             margin-bottom: 1.5rem;
         }
 
-        .philosophy-visual {
-            position: relative;
-            height: 500px;
+        .overview-content p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
         }
 
-        .philosophy-visual svg {
+        .overview-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-box .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--green);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-box .label {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--charcoal);
+        }
+
+        .overview-image {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .overview-image img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
         }
 
         /* Services Grid */
@@ -282,186 +307,371 @@
             font-size: 0.9rem;
         }
 
-        /* Benefits Section */
-        .benefits-section {
-            padding: 8rem 5%;
-            background: var(--forest);
-            color: var(--sand);
+        /* Sub-Services Section */
+        .sub-services {
+            background: var(--midnight);
+            padding: 6rem 5%;
+            color: var(--cream);
         }
 
-        .benefits-container {
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        .benefits-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            text-align: center;
-            margin-bottom: 5rem;
+        .service-card {
+            background: rgba(255,255,255,0.05);
+            padding: 3rem;
+            border-left: 4px solid var(--gold);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
 
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 4rem;
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(201,160,80,0.1), transparent);
+            transition: left 0.5s ease;
         }
 
-        .benefit-item {
-            display: flex;
-            gap: 2rem;
-            align-items: flex-start;
+        .service-card:hover::before {
+            left: 100%;
         }
 
-        .benefit-icon {
-            width: 60px;
-            height: 60px;
-            border: 2px solid var(--moss);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .service-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateX(10px);
+            border-left-color: var(--cream);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-family: 'Merriweather', serif;
             font-size: 1.8rem;
-            flex-shrink: 0;
-            color: var(--moss);
-        }
-
-        .benefit-content h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            color: var(--gold);
             margin-bottom: 1rem;
         }
 
-        .benefit-content p {
-            line-height: 1.8;
+        .service-card p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
             opacity: 0.9;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 1rem;
+            opacity: 0.85;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .service-link {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .service-link:hover {
+            background: var(--gold);
+            color: var(--midnight);
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 6rem 5%;
+            background: var(--cream);
+        }
+
+        .process-timeline {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            position: relative;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gold);
+            transform: translateX(-50%);
+        }
+
+        .process-step {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .process-step:nth-child(even) .step-content {
+            order: 2;
+        }
+
+        .process-step:nth-child(even) .step-number {
+            order: 1;
+        }
+
+        .step-content {
+            background: white;
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .step-content h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            color: var(--midnight);
+            margin-bottom: 1rem;
+        }
+
+        .step-content p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--charcoal);
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .step-number .number {
+            width: 100px;
+            height: 100px;
+            background: var(--gold);
+            color: var(--midnight);
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 5px solid var(--cream);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 10;
         }
 
         /* Gallery Section */
         .gallery-section {
-            padding: 8rem 5%;
-            background: white;
+            padding: 6rem 5%;
+            background: var(--midnight);
         }
 
-        .gallery-header {
-            text-align: center;
-            margin-bottom: 5rem;
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 3rem auto 0;
         }
 
-        .gallery-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            color: var(--forest);
-        }
-
-        .masonry-grid {
-            max-width: 1600px;
-            margin: 0 auto;
-            columns: 3;
-            column-gap: 2rem;
-        }
-
-        .masonry-item {
-            break-inside: avoid;
-            margin-bottom: 2rem;
+        .gallery-item {
             position: relative;
+            height: 350px;
             overflow: hidden;
             cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
         }
 
-        .masonry-item svg {
+        .gallery-item img {
             width: 100%;
-            display: block;
-            transition: transform 0.6s ease;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
         }
 
-        .masonry-item:hover svg {
-            transform: scale(1.05);
+        .gallery-item:hover img {
+            transform: scale(1.1);
         }
 
-        .masonry-overlay {
+        .gallery-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
             padding: 2rem;
-            background: linear-gradient(to top, rgba(45, 80, 22, 0.9), transparent);
             color: white;
             transform: translateY(100%);
             transition: transform 0.4s ease;
         }
 
-        .masonry-item:hover .masonry-overlay {
+        .gallery-item:hover .gallery-overlay {
             transform: translateY(0);
         }
 
-        .masonry-overlay h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+        .gallery-overlay h4 {
+            font-size: 1.3rem;
             margin-bottom: 0.5rem;
+            color: var(--gold);
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 6rem 5%;
+            background: var(--cream);
+        }
+
+        .testimonials-slider {
+            max-width: 900px;
+            margin: 3rem auto 0;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-author {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        .testimonial-role {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            opacity: 0.7;
         }
 
         /* CTA Section */
         .cta-section {
-            padding: 8rem 5%;
-            background: linear-gradient(135deg, var(--moss) 0%, var(--terracotta) 100%);
+            padding: 6rem 5%;
+            background: var(--midnight);
             text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="80" height="80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
-            opacity: 0.5;
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
+            color: var(--cream);
         }
 
         .cta-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
+            font-family: 'Merriweather', serif;
+            font-size: 3.5rem;
+            color: var(--gold);
             margin-bottom: 1.5rem;
         }
 
         .cta-content p {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .cta-btn {
-            display: inline-block;
-            padding: 1.5rem 4rem;
-            background: white;
-            color: var(--forest);
-            text-decoration: none;
+            padding: 1.2rem 3rem;
+            font-size: 1rem;
             font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
             letter-spacing: 1px;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
+            border: 2px solid;
         }
 
-        .cta-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        .cta-btn-primary {
+            background: var(--gold);
+            color: var(--midnight);
+            border-color: var(--gold);
+        }
+
+        .cta-btn-primary:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        .cta-btn-secondary {
+            background: transparent;
+            color: var(--cream);
+            border-color: var(--cream);
+        }
+
+        .cta-btn-secondary:hover {
+            background: var(--cream);
+            color: var(--midnight);
         }
 
         /* Footer */
         footer {
-            background: var(--forest);
-            color: var(--sand);
+            background: var(--primary);
+            color: var(--cream);
             padding: 3rem 5%;
             text-align: center;
         }
@@ -472,39 +682,73 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .hero h1 {
-                font-size: 5rem;
+            .hero-content h1 {
+                font-size: 3.5rem;
             }
 
-            .philosophy-content {
+            .overview-grid {
                 grid-template-columns: 1fr;
             }
 
-            .services-container {
+            .services-grid {
                 grid-template-columns: 1fr;
             }
 
-            .benefits-grid {
-                grid-template-columns: 1fr;
+            .process-timeline::before {
+                left: 30px;
             }
 
-            .masonry-grid {
-                columns: 2;
+            .process-step {
+                grid-template-columns: 1fr;
+                padding-left: 80px;
+            }
+
+            .process-step:nth-child(even) .step-content {
+                order: 1;
+            }
+
+            .step-number {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
             }
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 3.5rem;
+            .hero-content h1 {
+                font-size: 2.5rem;
             }
 
-            .masonry-grid {
-                columns: 1;
+            .hero-content .service-number {
+                font-size: 5rem;
             }
 
             .nav-links {
                 gap: 1.5rem;
                 font-size: 0.85rem;
+            }
+
+            .overview-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .cta-content h2 {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-btn {
+                width: 100%;
+                max-width: 300px;
             }
         }
     </style>
@@ -514,51 +758,27 @@
     <nav>
         <div class="logo">LAPHIC <span>MODERN</span></div>
         <ul class="nav-links">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#about">WHO WE ARE</a></li>
-            <li><a href="#services">SERVICES</a></li>
-            <li><a href="#portfolio">PORTFOLIO</a></li>
-            <li><a href="#testimonials">TESTIMONIALS</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">WHO WE ARE</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="projects.html">PORTFOLIO</a></li>
+            <li><a href="testimonials.html">TESTIMONIALS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
         </ul>
     </nav>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="hero">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> / <a href="services.html">Services</a> / Landscape Design
+        </div>
         <div class="hero-content">
+            <span class="service-number">03</span>
             <h1>Landscape Design</h1>
-            <p>Where Nature Meets Architecture</p>
+            <p>Crafting Outdoor Sanctuaries & Natural Beauty</p>
         </div>
     </section>
 
-    <!-- Philosophy Section -->
-    <section class="philosophy-section">
-        <div class="philosophy-content">
-            <div class="philosophy-text">
-                <h2>Our Philosophy</h2>
-                <p>We believe that great landscape design is about creating harmony between built and natural environments. Every outdoor space tells a story and serves a purpose.</p>
-                <p>Our approach combines aesthetic beauty with ecological sustainability, creating landscapes that thrive over time while enhancing your property's value and your quality of life.</p>
-                <p>From intimate gardens to expansive compounds, we craft outdoor environments that inspire, relax, and connect you with nature.</p>
-            </div>
-            <div class="philosophy-visual">
-                <svg viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="landscape-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" style="stop-color:#87ceeb;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#68a357;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#2d5016;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    <rect width="600" height="500" fill="url(#landscape-grad)"/>
-                    <circle cx="150" cy="150" r="80" fill="rgba(212,112,90,0.4)"/>
-                    <ellipse cx="450" cy="200" rx="120" ry="80" fill="rgba(139,115,85,0.5)"/>
-                    <path d="M 0,350 Q 150,300 300,350 T 600,350 L 600,500 L 0,500 Z" fill="rgba(45,80,22,0.6)"/>
-                </svg>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
     <section class="services-section">
         <div class="services-header">
             <h2>Our Services</h2>
@@ -694,38 +914,167 @@
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section class="benefits-section">
-        <div class="benefits-container">
-            <h2 class="benefits-title">Why Landscape Design Matters</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">🏡</div>
-                    <div class="benefit-content">
-                        <h4>Increased Property Value</h4>
-                        <p>Professional landscaping can increase your property value by 15-20%, making it one of the best investments you can make in your home.</p>
-                    </div>
+    <!-- Sub-Services Section -->
+    <section class="sub-services">
+        <div class="section-header">
+            <h2>Our Landscape Design Services</h2>
+            <p>Complete outdoor solutions for your property</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Garden Design -->
+            <div class="service-card">
+                <span class="service-icon">🌺</span>
+                <h3>Custom Garden Design</h3>
+                <p>Create your personal paradise with custom-designed gardens featuring native and exotic plants arranged for year-round beauty.</p>
+                <ul class="service-features">
+                    <li>Native plant landscaping</li>
+                    <li>Tropical garden designs</li>
+                    <li>Flower gardens and borders</li>
+                    <li>Herb and vegetable gardens</li>
+                    <li>Zen and meditation gardens</li>
+                    <li>Seasonal planting plans</li>
+                </ul>
+                <a href="contact.html" class="service-link">Request Quote</a>
+            </div>
+
+            <!-- Irrigation Systems -->
+            <div class="service-card">
+                <span class="service-icon">💧</span>
+                <h3>Irrigation & Water Features</h3>
+                <p>Efficient irrigation systems and beautiful water features that enhance your landscape while conserving water.</p>
+                <ul class="service-features">
+                    <li>Automated irrigation systems</li>
+                    <li>Drip irrigation installation</li>
+                    <li>Decorative fountains</li>
+                    <li>Koi ponds and water gardens</li>
+                    <li>Waterfalls and streams</li>
+                    <li>Rainwater harvesting systems</li>
+                </ul>
+                <a href="contact.html" class="service-link">Request Quote</a>
+            </div>
+
+            <!-- Hardscaping -->
+            <div class="service-card">
+                <span class="service-icon">🪨</span>
+                <h3>Hardscaping & Pathways</h3>
+                <p>Durable and beautiful hardscape elements including patios, walkways, retaining walls, and decorative stonework.</p>
+                <ul class="service-features">
+                    <li>Paver patios and walkways</li>
+                    <li>Natural stone installations</li>
+                    <li>Retaining walls</li>
+                    <li>Outdoor stairs and steps</li>
+                    <li>Decorative rock gardens</li>
+                    <li>Driveway design</li>
+                </ul>
+                <a href="contact.html" class="service-link">Request Quote</a>
+            </div>
+
+            <!-- Lawn Care -->
+            <div class="service-card">
+                <span class="service-icon">🌱</span>
+                <h3>Professional Lawn Installation</h3>
+                <p>Perfect green lawns using quality grass varieties suited to Uganda's climate, with expert installation and maintenance guidance.</p>
+                <ul class="service-features">
+                    <li>Natural grass installation</li>
+                    <li>Artificial turf solutions</li>
+                    <li>Soil preparation and grading</li>
+                    <li>Lawn edging and borders</li>
+                    <li>Maintenance programs</li>
+                    <li>Organic lawn care options</li>
+                </ul>
+                <a href="contact.html" class="service-link">Request Quote</a>
+            </div>
+
+            <!-- Outdoor Living -->
+            <div class="service-card">
+                <span class="service-icon">🏡</span>
+                <h3>Outdoor Living Spaces</h3>
+                <p>Extend your home outdoors with designed living areas perfect for entertaining, relaxing, and enjoying nature.</p>
+                <ul class="service-features">
+                    <li>Outdoor kitchens and bars</li>
+                    <li>Fire pits and fireplaces</li>
+                    <li>Seating and lounge areas</li>
+                    <li>Pergolas and shade structures</li>
+                    <li>Outdoor lighting design</li>
+                    <li>Entertainment zones</li>
+                </ul>
+                <a href="contact.html" class="service-link">Request Quote</a>
+            </div>
+
+            <!-- Complete Landscape -->
+            <div class="service-card">
+                <span class="service-icon">✨</span>
+                <h3>Complete Landscape Packages</h3>
+                <p>Comprehensive landscape design and installation from concept to completion, creating cohesive outdoor environments.</p>
+                <ul class="service-features">
+                    <li>Master landscape planning</li>
+                    <li>3D landscape visualization</li>
+                    <li>Full project management</li>
+                    <li>Plant procurement</li>
+                    <li>Installation and planting</li>
+                    <li>Maintenance guidance</li>
+                </ul>
+                <a href="contact.html" class="service-link">Request Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="section-header">
+            <h2>Our Design Process</h2>
+            <p>From bare ground to beautiful garden</p>
+        </div>
+
+        <div class="process-timeline">
+            <div class="process-step">
+                <div class="step-content">
+                    <h3>Site Analysis</h3>
+                    <p>We assess your property's soil, drainage, sun exposure, and existing features to create a landscape plan that thrives.</p>
                 </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">🌱</div>
-                    <div class="benefit-content">
-                        <h4>Environmental Benefits</h4>
-                        <p>Thoughtful landscaping reduces erosion, improves air quality, provides natural cooling, and supports local ecosystems.</p>
-                    </div>
+                <div class="step-number">
+                    <div class="number">01</div>
                 </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">😌</div>
-                    <div class="benefit-content">
-                        <h4>Enhanced Well-being</h4>
-                        <p>Beautiful outdoor spaces reduce stress, encourage outdoor activity, and provide peaceful retreats from daily life.</p>
-                    </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-content">
+                    <h3>Design Concept</h3>
+                    <p>Our landscape architects develop concepts with plant selections, hardscape elements, and 3D renderings of your future garden.</p>
                 </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">⚡</div>
-                    <div class="benefit-content">
-                        <h4>Energy Efficiency</h4>
-                        <p>Strategic placement of trees and plants can reduce cooling costs by up to 30% through natural shade and windbreaks.</p>
-                    </div>
+                <div class="step-number">
+                    <div class="number">02</div>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-content">
+                    <h3>Material Selection</h3>
+                    <p>Choose plants, stones, and materials with our guidance, ensuring they suit Uganda's climate and your maintenance preferences.</p>
+                </div>
+                <div class="step-number">
+                    <div class="number">03</div>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-content">
+                    <h3>Installation</h3>
+                    <p>Our skilled team brings the design to life with expert planting, irrigation setup, and hardscape construction.</p>
+                </div>
+                <div class="step-number">
+                    <div class="number">04</div>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-content">
+                    <h3>Care & Maintenance</h3>
+                    <p>We provide detailed care instructions and optional maintenance services to keep your landscape looking its best.</p>
+                </div>
+                <div class="step-number">
+                    <div class="number">05</div>
                 </div>
             </div>
         </div>
@@ -733,63 +1082,69 @@
 
     <!-- Gallery Section -->
     <section class="gallery-section">
-        <div class="gallery-header">
-            <h2>Featured Projects</h2>
+        <div class="section-header">
+            <h2>Our Landscape Design Portfolio</h2>
+            <p>Explore our recent landscape projects</p>
         </div>
-        <div class="masonry-grid">
-            <div class="masonry-item">
-                <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="300" fill="#2d5016"/>
-                </svg>
-                <div class="masonry-overlay">
-                    <h4>Tropical Garden</h4>
-                    <p>Kampala Residence</p>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/landscape.jfif" alt="Tropical Garden">
+                <div class="gallery-overlay">
+                    <h4>Tropical Paradise</h4>
+                    <p>Lush exotic plantings</p>
                 </div>
             </div>
-            <div class="masonry-item">
-                <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="500" fill="#68a357"/>
-                </svg>
-                <div class="masonry-overlay">
-                    <h4>Modern Compound</h4>
-                    <p>Entebbe Villa</p>
+            <div class="gallery-item">
+                <img src="images/landscape.jfif" alt="Zen Garden">
+                <div class="gallery-overlay">
+                    <h4>Zen Sanctuary</h4>
+                    <p>Peaceful meditation space</p>
                 </div>
             </div>
-            <div class="masonry-item">
-                <svg viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="350" fill="#8b7355"/>
-                </svg>
-                <div class="masonry-overlay">
-                    <h4>Terrace Design</h4>
-                    <p>Luxury Home</p>
+            <div class="gallery-item">
+                <img src="images/landscape.jfif" alt="Water Feature">
+                <div class="gallery-overlay">
+                    <h4>Water Garden</h4>
+                    <p>Tranquil koi pond</p>
                 </div>
             </div>
-            <div class="masonry-item">
-                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="400" fill="#d4705a"/>
-                </svg>
-                <div class="masonry-overlay">
-                    <h4>Outdoor Kitchen</h4>
-                    <p>Entertainment Space</p>
+            <div class="gallery-item">
+                <img src="images/landscape.jfif" alt="Entertainment Area">
+                <div class="gallery-overlay">
+                    <h4>Outdoor Living</h4>
+                    <p>Perfect for entertaining</p>
                 </div>
             </div>
-            <div class="masonry-item">
-                <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="280" fill="#87ceeb"/>
-                </svg>
-                <div class="masonry-overlay">
-                    <h4>Pool Area</h4>
-                    <p>Resort Style</p>
+            <div class="gallery-item">
+                <img src="images/landscape.jfif" alt="Garden Path">
+                <div class="gallery-overlay">
+                    <h4>Garden Pathway</h4>
+                    <p>Beautiful stone walkway</p>
                 </div>
             </div>
-            <div class="masonry-item">
-                <svg viewBox="0 0 400 450" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="400" height="450" fill="#2d5016"/>
-                </svg>
-                <div class="masonry-overlay">
-                    <h4>Garden Paradise</h4>
-                    <p>Private Estate</p>
+            <div class="gallery-item">
+                <img src="images/landscape.jfif" alt="Native Landscape">
+                <div class="gallery-overlay">
+                    <h4>Native Garden</h4>
+                    <p>Sustainable indigenous plants</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="section-header">
+            <h2>What Our Clients Say</h2>
+            <p>Real experiences from satisfied property owners</p>
+        </div>
+
+        <div class="testimonials-slider">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"LAPHIC Modern Homes transformed our backyard into a tropical paradise. The water feature and native plants create a peaceful retreat. Their knowledge of plants that thrive in Uganda is exceptional!"</p>
+                <p class="testimonial-author">Grace Nakato</p>
+                <p class="testimonial-role">Homeowner, Lubowa</p>
             </div>
         </div>
     </section>
@@ -797,39 +1152,18 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-content">
-            <h2>Create Your Outdoor Paradise</h2>
-            <p>Let's design a landscape that enhances your lifestyle and brings you closer to nature.</p>
-            <a href="contact.html" class="cta-btn">START YOUR PROJECT</a>
+            <h2>Ready to Create Your Dream Garden?</h2>
+            <p>Let's design an outdoor space you'll love</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="cta-btn cta-btn-primary">Get Free Consultation</a>
+                <a href="projects.html" class="cta-btn cta-btn-secondary">View Our Portfolio</a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 LAPHIC Modern Homes. All Rights Reserved.</p>
+        <p>&copy; 2024 LAPHIC Modern Homes. All Rights Reserved. | Think It, We Create It.</p>
     </footer>
-
-    <script>
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.service-card, .benefit-item, .masonry-item').forEach((el, index) => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = `all 0.6s ease-out ${index * 0.05}s`;
-            observer.observe(el);
-        });
-    </script>
 </body>
 </html>

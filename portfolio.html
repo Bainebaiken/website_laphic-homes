@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - LAPHIC Modern Homes</title>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:wght@300;400;500;600&family=Raleway:wght@300;400;500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -18,6 +19,12 @@
             --cream: #f8f6f0;
             --charcoal: #2c2c2c;
             --rust: #c85a3e;
+            --obsidian: #0e1111;
+            --graphite: #2a2a2a;
+            --amber: #ffbf00;
+            --pearl: #ffffff;
+            --silver: #b5b5b5;
+            --crimson: #8b0000;
         }
 
         body {
@@ -27,7 +34,7 @@
             overflow-x: hidden;
         }
 
-      nav {
+       nav {
             position: fixed;
             width: 100%;
             top: 0;
@@ -46,6 +53,11 @@
             color: var(--gold);
             letter-spacing: 3px;
         }
+        .logo span {
+           color: var(--cream);
+           margin-left: 5px;
+       }
+
 
         .nav-links {
             display: flex;
@@ -266,8 +278,9 @@
         /* Stats Section */
         .stats-section {
             padding: 6rem 5%;
-            background: var(--obsidian);
-            color: white;
+            background: var(--obsidian); 
+            background: var(--cream);
+            color: rgb(10, 9, 9);
         }
 
         .stats-container {
@@ -276,15 +289,15 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 4rem;
-            text-align: center;
-        }
+            text-align: center; 
+       } 
 
         .stat-box {
             padding: 2rem;
             border: 2px solid var(--amber);
             position: relative;
-        }
-
+        } 
+       
         .stat-box::before {
             content: '';
             position: absolute;
@@ -295,28 +308,48 @@
             border: 2px solid rgba(255, 191, 0, 0.3);
             transition: all 0.4s ease;
         }
-
+          
         .stat-box:hover::before {
             top: -15px;
             left: -15px;
             right: -15px;
             bottom: -15px;
-        }
-
-        .stat-number {
+        } 
+        
+      .stat-number {
             font-family: 'Libre Baskerville', serif;
             font-size: 4.5rem;
             color: var(--amber);
             margin-bottom: 0.5rem;
             font-weight: 700;
-        }
-
-        .stat-label {
+        } 
+        
+      .stat-label {
             font-size: 1rem;
             letter-spacing: 2px;
             font-weight: 500;
+        } 
+
+
+
+        /* BACKGROUND IMAGES */
+        /* .stat-box.projects {
+           background: url("images/exterior.jfif") center/cover no-repeat;
         }
 
+        .stat-box.clients {
+           background: url("images/clients.jpg") center/cover no-repeat;
+        }
+
+       .stat-box.experience {
+          background: url("images/experience.jpg") center/cover no-repeat;
+        }
+
+        .stat-box.awards {
+            background: url("images/awards.jpg") center/cover no-repeat;
+        } */
+
+        
         /* Testimonial Section */
         .testimonial-section {
             padding: 8rem 5%;
@@ -366,9 +399,10 @@
         /* CTA Section */
         .cta-section {
             padding: 8rem 5%;
-            background: linear-gradient(135deg, var(--crimson) 0%, var(--obsidian) 100%);
+            /* background: linear-gradient(135deg, var(--crimson) 0%, var(--obsidian) 0%); */
+            background: var(--charcoal);
             text-align: center;
-            color: white;
+            color: rgb(250, 249, 249);
         }
 
         .cta-section h2 {
@@ -405,8 +439,8 @@
 
         /* Footer */
         footer {
-            background: var(--obsidian);
-            color: var(--silver);
+            background: var(--primary);
+            color: var(--cream);
             padding: 3rem 5%;
             text-align: center;
         }
@@ -449,14 +483,14 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="logo">LAPHIC <span>MODERN HOMES</span></div>
+        <div class="logo">LAPHIC<span>MODERN</span></div>
         <ul class="nav-links">
             <li><a href="#home">HOME</a></li>
             <li><a href="#about">WHO WE ARE</a></li>
             <li><a href="#services">SERVICES</a></li>
             <li><a href="#portfolio">PORTFOLIO</a></li>
             <li><a href="#testimonials">TESTIMONIALS</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="#contact">CONTACT US</a></li>
         </ul>
     </nav>
 
@@ -475,7 +509,7 @@
             <button class="filter-btn" data-filter="interior">INTERIOR DESIGN</button>
             <button class="filter-btn" data-filter="exterior">EXTERIOR DESIGN</button>
             <button class="filter-btn" data-filter="landscape">LANDSCAPE</button>
-            <button class="filter-btn" data-filter="commercial">COMMERCIAL</button>
+            
         </div>
     </section>
 
@@ -619,22 +653,23 @@
     <!-- Stats Section -->
     <section class="stats-section">
         <div class="stats-container">
-            <div class="stat-box">
-                <div class="stat-number">500+</div>
-                <div class="stat-label">COMPLETED PROJECTS</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">450+</div>
-                <div class="stat-label">HAPPY CLIENTS</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">15</div>
-                <div class="stat-label">YEARS EXPERIENCE</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">25+</div>
-                <div class="stat-label">AWARDS WON</div>
-            </div>
+        
+         <div class="stat-box">
+             <div class="stat-number">500+</div>
+             <div class="stat-label">COMPLETED PROJECTS</div>
+         </div>
+         <div class="stat-box">
+             <div class="stat-number">450+</div>
+             <div class="stat-label">HAPPY CLIENTS</div>
+         </div>
+         <div class="stat-box">
+             <div class="stat-number">15</div>
+             <div class="stat-label">YEARS EXPERIENCE</div>
+         </div>
+         <div class="stat-box">
+             <div class="stat-number">25+</div>
+             <div class="stat-label">AWARDS WON</div>
+         </div>
         </div>
     </section>
 
@@ -700,7 +735,7 @@
                 }
             });
         }, observerOptions);
-
+        
         portfolioItems.forEach((item, index) => {
             item.style.opacity = '0';
             item.style.transform = 'translateY(30px)';

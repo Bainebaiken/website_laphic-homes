@@ -332,6 +332,13 @@
         .service-block:nth-child(even) .service-btn:hover {
             color: var(--cream);
         }
+        .service-visual svg image {
+         transition: transform 1s ease;
+        }
+
+        .service-block:hover .service-visual svg image {
+            transform: scale(1.05);
+        }
 
         /* CTA Section */
         .cta-section {
@@ -472,16 +479,21 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    WHO WE ARE (About Us , main page )
-Purpose: to build trust and credibility 
-Subsections:
-•	Company overview
-•	Mission & Vision
-•	Why choose LAPHIC Modern Homes
-•	Our values
-•	Optional: Team section (if needed)
+    
+    <!-- ================= NAVBAR ================= -->
+    <nav>
+        <div class="logo">LAPHIC <span>MODERN</span></div>
+        <div class="menu-toggle" id="menuToggle">☰</div>
 
+     <ul class="nav-links" id="navLinks">
+         <li><a href="#home" class="nav-link">HOME</a></li>
+         <li><a href="#about" class="nav-link">WHO WE ARE</a></li>
+         <li><a href="#services" class="nav-link">SERVICES</a></li>
+         <li><a href="#portfolio" class="nav-link">PORTFOLIO</a></li>
+         <li><a href="#testimonials" class="nav-link">TESTIMONIALS</a></li>
+         <li><a href="#contact" class="nav-link">CONTACT</a></li>
+      </ul>
+    </nav>
 
     <!-- Hero -->
     <section class="hero">
@@ -503,20 +515,34 @@ Subsections:
             <!-- Interior Design -->
             <div class="service-block">
                 <div class="service-visual">
-                    <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#3d3d3d;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                        <rect width="800" height="600" fill="url(#grad1)"/>
-                        <rect x="100" y="100" width="250" height="350" fill="none" stroke="#d4af37" stroke-width="3" opacity="0.4"/>
-                        <rect x="450" y="150" width="250" height="300" fill="none" stroke="#d4af37" stroke-width="3" opacity="0.6"/>
-                        <circle cx="400" cy="300" r="80" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.3"/>
-                        <line x1="200" y1="100" x2="650" y2="450" stroke="#c9a050" stroke-width="1" opacity="0.2"/>
+                  <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg"
+                      preserveAspectRatio="xMidYMid slice">
+
+                      <!-- Background Image -->
+                     <image
+                         href="images/interior.jfif"
+                          x="0"
+                          y="0"
+                          width="800"
+                          height="600"
+                          preserveAspectRatio="xMidYMid slice"
+                      />
+
+                     <!-- Dark overlay for readability -->
+                     <rect width="800" height="600" fill="rgba(0,0,0,0.45)" />
+
+                     <!-- Your existing decorative elements -->
+                     <rect x="100" y="100" width="250" height="350"
+                       fill="none" stroke="#d4af37" stroke-width="3" opacity="0.4"/>
+
+                     <rect x="450" y="150" width="250" height="300"
+                       fill="none" stroke="#d4af37" stroke-width="3" opacity="0.6"/>
+
+                      <circle cx="400" cy="300" r="80"
+                        fill="none" stroke="#d4af37" stroke-width="2" opacity="0.3"/>
                     </svg>
-                </div>
+               </div>
+
                 <div class="service-content">
                     <div class="service-number">01</div>
                     <h3>INTERIOR DESIGN</h3>
@@ -536,13 +562,17 @@ Subsections:
             <div class="service-block">
                 <div class="service-visual">
                     <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#f8f6f0;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#e8e6e0;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                        <rect width="800" height="600" fill="url(#grad2)"/>
+                     <image
+                          href="images/exterior.jfif"
+                           x="0"
+                           y="0"
+                           width="800"
+                           height="600"
+                           preserveAspectRatio="xMidYMid slice"
+                      />
+                        <rect width="800" height="600" fill="rgba(255,255,255,0.6)" />
+
+                        
                         <polygon points="150,200 400,100 650,200 650,450 150,450" fill="none" stroke="#c85a3e" stroke-width="3" opacity="0.5"/>
                         <rect x="250" y="250" width="100" height="150" fill="none" stroke="#c85a3e" stroke-width="2" opacity="0.4"/>
                         <rect x="450" y="250" width="100" height="150" fill="none" stroke="#c85a3e" stroke-width="2" opacity="0.4"/>
@@ -568,12 +598,17 @@ Subsections:
             <div class="service-block">
                 <div class="service-visual">
                     <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#0f0f0f;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#2a2a2a;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
+                       <image
+                          href="images/landscape.jfif"
+                          x="0"
+                          y="0"
+                          width="800"
+                          height="600"
+                          preserveAspectRatio="xMidYMid slice"
+                        />
+                       <rect width="800" height="600" fill="rgba(0,0,0,0.35)" />
+
+                        
                         <rect width="800" height="600" fill="url(#grad3)"/>
                         <circle cx="300" cy="250" r="100" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.4"/>
                         <circle cx="500" cy="350" r="120" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.3"/>
