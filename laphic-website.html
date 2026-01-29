@@ -15,10 +15,12 @@
         :root {
             --primary: #1a1a1a;
             --secondary: #c9a050;
-            --accent: #d4af37;
+            --accent: #d49727;
             --light: #f5f5f5;
             --white: #ffffff;
             --grey: #666666;
+            --gold: #d4af37;
+            --cream: #f1e0bd;
         }
 
         body {
@@ -34,66 +36,37 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
             padding: 1.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-            animation: slideDown 0.6s ease-out;
-        }
-
-        @keyframes slideDown {
-            from { transform: translateY(-100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
         }
 
         .logo {
-            font-family: 'Italiana', serif;
+            font-family: 'Bebas Neue', cursive;
             font-size: 2rem;
-            font-weight: 400;
-            letter-spacing: 2px;
-            color: var(--primary);
-        }
-
-        .logo span {
-            color: var(--accent);
+            color: var(--gold);
+            letter-spacing: 3px;
         }
 
         .nav-links {
             display: flex;
-            gap: 3rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
         .nav-links a {
+            color: var(--cream);
             text-decoration: none;
-            color: var(--primary);
-            font-weight: 500;
             font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--accent);
+            color: var(--gold);
         }
 
         /* Hero Section */
@@ -286,7 +259,7 @@
 
         /* Services Section */
         .services {
-            background: var(--light);
+            background: var(--cream);
         }
 
         .services-grid {
@@ -821,12 +794,12 @@
     <nav>
         <div class="logo">LAPHIC <span>MODERN</span></div>
         <ul class="nav-links">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#about">WHO WE ARE</a></li>
-            <li><a href="#services">SERVICES</a></li>
-            <li><a href="#portfolio">PORTFOLIO</a></li>
-            <li><a href="#testimonials">TESTIMONIALS</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="laphic-website.html">HOME</a></li>
+            <li><a href="who-we-are.html">WHO WE ARE</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="portfolio.html">PORTFOLIO</a></li>
+            <li><a href="testimonials.html">TESTIMONIALS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
         </ul>
     </nav>
 
@@ -1065,11 +1038,11 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="laphic-website.html">Home</a></li>
+                    <li><a href="who-we-are.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             
